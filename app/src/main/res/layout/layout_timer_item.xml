@@ -21,12 +21,22 @@
         tools:text="00:00:00" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/start"
+        android:id="@+id/delete_button"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_margin="@dimen/margin_10"
-        android:backgroundTint="@color/dark_green"
+        android:background="@drawable/ic_trash"
+        app:backgroundTint="@color/dark_green"
+        app:layout_constraintBottom_toBottomOf="@id/textView"
+        app:layout_constraintTop_toTopOf="@id/textView"
+        app:layout_constraintEnd_toStartOf="@id/start_button" />
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="@dimen/margin_10"
+        android:background="@drawable/ic_play"
+        app:backgroundTint="@color/dark_green"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent" />

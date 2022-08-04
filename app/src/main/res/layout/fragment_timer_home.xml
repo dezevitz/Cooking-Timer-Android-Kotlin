@@ -8,7 +8,6 @@
     android:paddingHorizontal="10dp"
     tools:context=".ui.home.HomeFragment">
 
-    <!--TODO update this to play button, and add trash icon for delete -->
     <Button
         android:id="@+id/add_timer_button"
         android:layout_width="match_parent"
