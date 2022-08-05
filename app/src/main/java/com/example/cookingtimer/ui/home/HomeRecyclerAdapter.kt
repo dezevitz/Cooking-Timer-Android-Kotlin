@@ -23,7 +23,7 @@ class HomeRecyclerAdapter(private val timerList: List<String>) : RecyclerView.Ad
         return timerList.size
     }
 
-    class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val time: TextView = itemView.findViewById(R.id.time_textView)
     }
 }
