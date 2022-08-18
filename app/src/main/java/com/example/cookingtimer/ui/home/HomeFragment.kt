@@ -9,8 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cookingtimer.databinding.FragmentTimerHomeBinding
-import java.util.*
-import kotlin.concurrent.timer
 
 class HomeFragment : Fragment() {
 
