@@ -1,6 +1,5 @@
 package com.example.cookingtimer.ui.home
 
-import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +19,6 @@ class HomeRecyclerAdapter(private val timerList: List<String>) : RecyclerView.Ad
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.time.text = timerList[position]
 
-        //initialize the listener
         holder.onClick(holder.item)
     }
 
@@ -38,10 +36,7 @@ class HomeRecyclerAdapter(private val timerList: List<String>) : RecyclerView.Ad
                 time.text = "abcdefg"
             }
         }
-
     }
-
-
 }
 
 interface OnClickListener {
