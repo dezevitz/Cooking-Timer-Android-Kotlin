@@ -1,5 +1,6 @@
 package com.example.cookingtimer.ui.home
 
+import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,9 +33,25 @@ class HomeRecyclerAdapter(private val timerList: List<String>) : RecyclerView.Ad
 
         override fun onClick(itemView: View) {
             val startButton: Button = itemView.findViewById(R.id.start_button)
+            val deleteButton: Button = itemView.findViewById(R.id.delete_button)
+
             startButton.setOnClickListener{
-                time.text = "abcdefg"
+                timer.start()
             }
+            deleteButton.setOnClickListener {
+                TODO()
+            }
+        }
+
+        val timer = object: CountDownTimer(30000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                time.text = ((millisUntilFinished/1000).toString())
+            }
+
+            override fun onFinish() {
+                time.text = "DONE"
+            }
+
         }
     }
 }

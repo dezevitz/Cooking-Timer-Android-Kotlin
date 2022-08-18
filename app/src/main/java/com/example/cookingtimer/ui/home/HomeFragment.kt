@@ -24,10 +24,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-
         _binding = FragmentTimerHomeBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 
@@ -41,29 +38,15 @@ class HomeFragment : Fragment() {
 
     private fun setListeners() {
         binding.addTimerButton.setOnClickListener{
-            val timer = createTimer()
+            createTimerItem()
             homeRecyclerAdapter.notifyItemChanged(timersList.size-1)
         }
-
-        // on click of start button, timer.launch (maybe timer.start idr)
     }
 
-    private fun createTimer(): CountDownTimer{
+    private fun createTimerItem(){
         val position = timersList.size
         timersList.add("Click to start")
-        val timer = object: CountDownTimer(30000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                timersList[position] = ((millisUntilFinished/1000).toString())
-                homeRecyclerAdapter.notifyItemChanged(position)
-            }
-
-            override fun onFinish() {
-                timersList[position] = "DONE"
-                homeRecyclerAdapter.notifyItemChanged(position)
-            }
-
-        }
-        return timer
+        homeRecyclerAdapter.notifyItemChanged(position)
     }
 
     override fun onDestroyView() {
